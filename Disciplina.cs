@@ -27,7 +27,7 @@ namespace ProjetoCursos
 
         public bool matricularAluno(Aluno aluno)
         {
-            // Verifica se já está matriculado
+            // Verifica se o aluno já está matriculado
             for (int i = 0; i < 15; i++)
             {
                 if (alunos[i] != null &&
@@ -37,7 +37,7 @@ namespace ProjetoCursos
                 }
             }
 
-            // Procura uma posição vazia
+            // Procura uma vaga
             for (int i = 0; i < 15; i++)
             {
                 if (alunos[i] == null)
@@ -47,7 +47,7 @@ namespace ProjetoCursos
                 }
             }
 
-            // Disciplina cheia
+            // Não há vagas
             return false;
         }
 
@@ -78,6 +78,20 @@ namespace ProjetoCursos
             }
 
             return false;
+        }
+
+        public Aluno procurarAluno(int id)
+        {
+            for (int i = 0; i < 15; i++)
+            {
+                if (alunos[i] != null &&
+                    alunos[i].Id == id)
+                {
+                    return alunos[i];
+                }
+            }
+
+            return null;
         }
 
         public int quantidadeAlunos()
