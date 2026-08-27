@@ -27,7 +27,6 @@ namespace ProjetoCursos
 
         public bool matricularAluno(Aluno aluno)
         {
-            // Verifica se o aluno já está matriculado
             for (int i = 0; i < 15; i++)
             {
                 if (alunos[i] != null &&
@@ -37,7 +36,6 @@ namespace ProjetoCursos
                 }
             }
 
-            // Procura uma vaga
             for (int i = 0; i < 15; i++)
             {
                 if (alunos[i] == null)
@@ -47,7 +45,6 @@ namespace ProjetoCursos
                 }
             }
 
-            // Não há vagas
             return false;
         }
 
